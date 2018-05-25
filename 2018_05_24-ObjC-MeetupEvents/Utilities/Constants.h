@@ -18,3 +18,5 @@
 #define URL_NAME @"urlname"
 #define HIGHEST_LINK @"highres_link"
 #define LOCAL_DATE @"local_date"
+#define DESCRIPTION @"description"
+#define FINDUS @"how_to_find_us"

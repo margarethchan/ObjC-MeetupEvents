@@ -7,31 +7,90 @@
 //
 
 #import "EventDetailViewController.h"
+#import "Event.h"
+#import "ImageCache.h"
+#import "PersistenceManager.h"
 
 @interface EventDetailViewController ()
+//    @property (nonatomic) NSString *clean1str;
+@property (nonatomic, weak) IBOutlet UIImageView *eventImage;
+@property (nonatomic, weak) IBOutlet UILabel *eventName;
+@property (nonatomic, weak) IBOutlet UILabel *groupName;
+@property (nonatomic, weak) IBOutlet UILabel *eventDate;
+@property (nonatomic, weak) IBOutlet UITextView *eventDescription;
+@property (nonatomic, weak) IBOutlet UILabel *rsvpCount;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *favoriteEventButton;
+@property (nonatomic) NSArray <Event *> *events;
+
 
 @end
 
 @implementation EventDetailViewController
 
+-(instancetype)initWithEvent:(Event *)event {
+    self = [super init];
+    if (self) {
+        _event = event;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self configureViewWithEvent:self.event];
+    [[self favoriteEventButton] initWithTitle:@"Favorite" style:UIBarButtonItemStylePlain target:self action:@selector(favoriteButtonClicked:)];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)favoriteButtonClicked: (Event *)event {
+    NSLog(@"Favorite button pressed");
+    [PersistenceManager.sharedManager saveEvent:event];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+- (void)configureViewWithEvent:(Event *)event {
+    self.eventImage.image = [UIImage imageNamed:@"placeholder-image"];
+    
+    if (event.highResLink) {
+        UIImage *image = [[ImageCache sharedManager] getImageForKey:event.highResLink];
+        self.eventImage.image = image;
+    }
+    
+    
+    if (!event.eventName)
+        self.eventName.text = @"No Name";
+    else
+        self.eventName.text = event.eventName;
+    
+    
+    if (!event.groupName)
+        self.groupName.text = @"No Name";
+    else
+        self.groupName.text = event.groupName;
+    
+    
+    if (!event.localDate)
+        self.eventDate.text = @"No Date";
+    else
+        self.eventDate.text = event.localDate;
+    
+    if (!event.description)
+        self.eventDescription.text = @"No Description";
+    else
+        //        self.clean1str = [event.eventDescription stringByReplacingOccurrencesOfString:@"<p>" withString:@""];
+        //        self.eventDescription.text = [self.clean1str stringByReplacingOccurrencesOfString:@"<p>" withString:@" "];
+//        self.eventDescription.text = [event.eventDescription stringByReplacingOccurrencesOfString:@"<p>" withString:@" "];
+//    [self.event setValue:self.event.eventDescription forKey:@"contentToHTMLString"];
+    [self.eventDescription setValue:self.event.eventDescription forKey:@"contentToHTMLString"];
+    
+    if (!event.rsvpCount)
+        self.rsvpCount.text = @"No RSVP Info";
+    else
+        self.rsvpCount.text = [NSString stringWithFormat:@"RSVP YES: %ld", (long)event.rsvpCount];
+    
+    
+    
+    
 }
-*/
 
 @end

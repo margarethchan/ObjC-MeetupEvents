@@ -9,7 +9,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 
-@interface Event: NSObject
+@interface Event: NSObject <NSCoding>
     
     // root
     @property (nonatomic) NSNumber *eventCreated;
@@ -17,6 +17,8 @@
     @property (nonatomic) NSInteger rsvpCount;
     @property (nonatomic, copy) NSString *eventName;
     @property (nonatomic, copy) NSString *localDate;
+    @property (nonatomic, copy) NSString *eventDescription;
+    @property (nonatomic, copy) NSString *how_to_find_us;
     
     // venue
     @property (nonatomic) NSDictionary *venueDict;
@@ -36,10 +38,18 @@
     @property (nonatomic) NSNumber *photoId;
     @property (copy, nonatomic) NSString *highResLink;
     
-    // iamge
+    // image
     @property (nonatomic) UIImage *image;
     
     // initializer
 - (instancetype)initWithDict:(NSDictionary *)dict;
+
+
+
+- (void)encodeWithCoder:(nonnull NSCoder *)aCoder;
+
+- (instancetype)initWithCoder:(nonnull NSCoder *)aDecoder;
+
+    
     
     @end

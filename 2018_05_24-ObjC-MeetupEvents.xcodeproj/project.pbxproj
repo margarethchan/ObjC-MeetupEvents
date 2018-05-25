@@ -26,6 +26,9 @@
 		816387EA20B7B334005F5308 /* EventTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 816387E920B7B334005F5308 /* EventTests.m */; };
 		816387EC20B7B355005F5308 /* MeetupAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 816387EB20B7B355005F5308 /* MeetupAPITests.m */; };
 		816387EF20B85CB7005F5308 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816387EE20B85CB7005F5308 /* EventDetailViewController.m */; };
+		816387F220B87C2A005F5308 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816387F120B87C2A005F5308 /* FavoritesViewController.m */; };
+		816387F420B881E0005F5308 /* PersistenceDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 816387F320B881E0005F5308 /* PersistenceDataTests.m */; };
+		81EE7D5A20B8A9F600ECCA3C /* PersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 81EE7D5920B8A9F600ECCA3C /* PersistenceManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,11 @@
 		816387EB20B7B355005F5308 /* MeetupAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeetupAPITests.m; sourceTree = "<group>"; };
 		816387ED20B85CB7005F5308 /* EventDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventDetailViewController.h; sourceTree = "<group>"; };
 		816387EE20B85CB7005F5308 /* EventDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventDetailViewController.m; sourceTree = "<group>"; };
+		816387F020B87C2A005F5308 /* FavoritesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoritesViewController.h; sourceTree = "<group>"; };
+		816387F120B87C2A005F5308 /* FavoritesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoritesViewController.m; sourceTree = "<group>"; };
+		816387F320B881E0005F5308 /* PersistenceDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersistenceDataTests.m; sourceTree = "<group>"; };
+		81EE7D5820B8A9E200ECCA3C /* PersistenceManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersistenceManager.h; sourceTree = "<group>"; };
+		81EE7D5920B8A9F600ECCA3C /* PersistenceManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersistenceManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +182,8 @@
 				816387D120B7B126005F5308 /* MeetupAPI.m */,
 				816387D320B7B147005F5308 /* ImageCache.h */,
 				816387D420B7B14F005F5308 /* ImageCache.m */,
+				81EE7D5820B8A9E200ECCA3C /* PersistenceManager.h */,
+				81EE7D5920B8A9F600ECCA3C /* PersistenceManager.m */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -212,6 +222,8 @@
 				816387E320B7B274005F5308 /* EventsViewController.m */,
 				816387ED20B85CB7005F5308 /* EventDetailViewController.h */,
 				816387EE20B85CB7005F5308 /* EventDetailViewController.m */,
+				816387F020B87C2A005F5308 /* FavoritesViewController.h */,
+				816387F120B87C2A005F5308 /* FavoritesViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -235,6 +247,7 @@
 			children = (
 				816387E920B7B334005F5308 /* EventTests.m */,
 				816387EB20B7B355005F5308 /* MeetupAPITests.m */,
+				816387F320B881E0005F5308 /* PersistenceDataTests.m */,
 			);
 			path = EventTests;
 			sourceTree = "<group>";
@@ -373,11 +386,13 @@
 			files = (
 				816387D220B7B126005F5308 /* MeetupAPI.m in Sources */,
 				816387E420B7B274005F5308 /* EventsViewController.m in Sources */,
+				816387F220B87C2A005F5308 /* FavoritesViewController.m in Sources */,
 				816387CC20B7A623005F5308 /* EventService.m in Sources */,
 				8163879F20B7A5A6005F5308 /* _018_05_24_ObjC_MeetupEvents.xcdatamodeld in Sources */,
 				816387A720B7A5A6005F5308 /* main.m in Sources */,
 				816387DC20B7B1FC005F5308 /* Event.m in Sources */,
 				8163879620B7A5A6005F5308 /* AppDelegate.m in Sources */,
+				81EE7D5A20B8A9F600ECCA3C /* PersistenceManager.m in Sources */,
 				816387CF20B7B0E5005F5308 /* NetworkHelper.m in Sources */,
 				816387EF20B85CB7005F5308 /* EventDetailViewController.m in Sources */,
 				816387E020B7B23A005F5308 /* EventCell.m in Sources */,
@@ -392,6 +407,7 @@
 				816387EC20B7B355005F5308 /* MeetupAPITests.m in Sources */,
 				816387EA20B7B334005F5308 /* EventTests.m in Sources */,
 				816387B120B7A5A6005F5308 /* _018_05_24_ObjC_MeetupEventsTests.m in Sources */,
+				816387F420B881E0005F5308 /* PersistenceDataTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

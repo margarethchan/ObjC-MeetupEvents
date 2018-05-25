@@ -9,7 +9,7 @@
 #import "EventCell.h"
 #import "ImageCache.h"
 
-#define PADDING 20
+#define PADDING 10
 
 // class extension
 @interface EventCell ()

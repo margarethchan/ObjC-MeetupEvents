@@ -27,10 +27,15 @@
         _eventId = dict[ID];
         if (dict[NAME])
         _eventName = dict[NAME];
-        if (dict[NAME])
-        _rsvpCount = [dict[NAME] integerValue];
+        if (dict[RSVP_COUNT])
+        _rsvpCount = [dict[RSVP_COUNT] integerValue];
         if (dict[LOCAL_DATE])
         _localDate = dict[LOCAL_DATE];
+        if (dict[DESCRIPTION])
+        _eventDescription = dict[DESCRIPTION];
+        if (dict[FINDUS])
+        _how_to_find_us = dict[FINDUS];
+        
         
         // venue dictionary
         if (dict[VENUE]) {
@@ -70,5 +75,31 @@
     }
     return self;
 }
+    
+    
+    - (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
+        [aCoder encodeObject:_eventCreated forKey:CREATED];
+        [aCoder encodeObject:_eventId forKey:ID];
+        [aCoder encodeObject:_eventName forKey:NAME];
+        [aCoder encodeInteger:_rsvpCount forKey:RSVP_COUNT];
+        [aCoder encodeObject:_eventDescription forKey:DESCRIPTION];
+        [aCoder encodeObject:_how_to_find_us forKey:FINDUS];
+    }
+    
+- (instancetype)initWithCoder:(nonnull NSCoder *)aDecoder {
+    self = [super init];
+    if (self) {
+        _eventCreated = [aDecoder decodeObjectForKey:CREATED];
+        _eventId = [aDecoder decodeObjectForKey:ID];
+        _eventName = [aDecoder decodeObjectForKey:NAME];
+        _rsvpCount = [aDecoder decodeIntegerForKey:RSVP_COUNT];
+        _eventDescription = [aDecoder decodeObjectForKey:DESCRIPTION];
+        _how_to_find_us = [aDecoder decodeObjectForKey:FINDUS];
+        
+    }
+    return self;
+}
+    
+    
     
     @end

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Event.h"
 
 @interface AppDelegate ()
 
@@ -15,8 +16,19 @@
 @implementation AppDelegate
 
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = paths.firstObject;
+//    NSString *filename = @"filename.plist";
+//    NSString *path = [documentsDirectory stringByAppendingPathComponent:filename];
+//    
+//    NSArray <Event *> *events = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+//    
+//    if(!events)
+//        NSLog(@"failed to unarchive events");
+    
     return YES;
 }
 

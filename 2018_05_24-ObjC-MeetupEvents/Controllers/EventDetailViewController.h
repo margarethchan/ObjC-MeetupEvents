@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
 
 @interface EventDetailViewController : UIViewController
 
+    @property (nonatomic) Event* event;
+//    @property (strong, nonatomic) UIImage *eventImage;
+//    @property (strong, nonatomic) UILabel *eventName;
+//    @property (strong, nonatomic) UILabel *groupName;
+//    @property (strong, nonatomic) UILabel *eventDate;
+//    @property (strong, nonatomic) UILabel *eventDescription;
+//    @property (strong, nonatomic) UILabel *rsvpCount;
+    
+    -(instancetype)initWithEvent: (Event*) event;
+    
+    - (void)configureViewWithEvent:(Event *)event;
+    
 @end
